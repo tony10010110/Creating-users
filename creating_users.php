@@ -31,10 +31,10 @@ if (isset($data['do_creating']))
     {
         $error[] = 'Введіть логін користувача';
 
-//        if (R::count('users', 'login = ?', [$data['login']]) > 0) //перевірка чи такий логін вже існує
-//        {
-//            $error[] = 'Користувач з таким логіном вже існує';
-//        }
+        if (R::count('users', 'login = ?', [$data['login']]) > 0) //перевірка чи такий логін вже існує
+        {
+            $error[] = 'Користувач з таким логіном вже існує';
+        }
     }
 
 
@@ -42,15 +42,15 @@ if (isset($data['do_creating']))
     {
         $error[] = 'Введіть email користувача';
 
-//        if (R::count('users', 'email = ?', [$data['email']]) > 0) //перевірка чи такий email вже існує
-//        {
-//            $error[] = 'Користувач з таким email існує';
-//        }
+        if (R::count('users', 'email = ?', [$data['email']]) > 0) //перевірка чи такий email вже існує
+        {
+            $error[] = 'Користувач з таким email існує';
+        }
     }
 
     if (empty($error)) //якщо помилок немає
     {
-//        $user = R::dispense('users');
+        $user = R::dispense('users');
         $user->login = $data['login'];
         $user->email = $data['email'];
         $user->password = password_hash($data['password'], PASSWORD_DEFAULT);
