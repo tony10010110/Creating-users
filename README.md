@@ -6,3 +6,5 @@ Interface for creating users
 В `db.php` конфігурації підключення бази даних
 
 В `creating_users.php` у функції `sendMessage` є налаштування шаблону відправлених листів
+
+`new_index/` черезвичайно проста версія)))
